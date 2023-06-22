@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Our Team</title>
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
+        <link href="css/style.css" rel="stylesheet" type="text/css"/>
+    </head>
+
+    <body>
+        <div class="space">
+
+        </div>
+        <header>
+            <a href="index.html" class="logo">Logo</a>
+            <div class="toggle" onclick="toggleMenu();">
+            </div>
+        </header>
+        <div class="content">
+
+        </div>
+
+
+        <div class="navigation">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="japan.html">About Japan</a></li>
+                <li><a href="team.html">Team</a></li>
+            </ul>
+
+            <ul class="sci">
+                <li><a href="#"><img src="images/facebook.png" alt=""/></a></li>
+                <li><a href="#"><img src="images/twitter.png" alt=""/></a></li>
+                <li><a href="#"><img src="images/instagram.png" alt=""/></a></li>
+                <li><button onclick="myFunction()"><i class='bx bx-moon change-theme'></i></button></li>
+            </ul>
+        </div>
+
+
+        <script type="text/javascript">
+                    function toggleMenu(){
+                    const menuToggle = document.querySelector('.toggle');
+                            const navigation = document.querySelector('.navigation');
+                            menuToggle.classList.toggle('active');
+                            navigation.classList.toggle('active');
+                    }
+            function videoToggle(){
+            const trailer = document.querySelector('.trailer');
+                    trailer.classList.toggle('active');
+            }
+
+
+            document.body.style.backgroundColor = sessionStorage.getItem('bg');
+                    document.body.style.color = sessionStorage.getItem('cc');
+                    document.body.style.navigation = sessionStorage.getItem('nv');
+                    function myFunction() {
+                    if (sessionStorage.getItem('bg') === 'rgb(255, 255, 255)') {
+
+                    sessionStorage.setItem('bg', 'rgb(6, 23, 37)');
+                            sessionStorage.setItem('cc', '#777');
+                            sessionStorage.setItem('nv', 'rgb(6, 23, 37)');
+                    }
+                    else if (sessionStorage.getItem('bg') == null || undefined) {
+                    sessionStorage.setItem('bg', 'rgb(6, 23, 37)');
+                            sessionStorage.setItem('cc', '#777');
+                            sessionStorage.setItem('nv', 'rgb(6, 23, 37)');
+                    }
+                    else if (sessionStorage.getItem('bg') === 'rgb(6, 23, 37)') {
+
+                    sessionStorage.setItem('bg', 'rgb(255, 255, 255)');
+                            sessionStorage.setItem('cc', '#333');
+                            sessionStorage.setItem('nv', 'rgb(6, 23, 37)');
+                    }
+
+                    document.body.style.backgroundColor = sessionStorage.getItem('bg');
+                            document.body.style.color = sessionStorage.getItem('cc');
+                            document.body.style.navigation = sessionStorage.getItem('nv');
+                    }
+        </script>
+        <section>
+            <div class="container">
+                <h1 class="heading">Meet The Team</h1>
+                <div class="card-wrapper">
+                    <div class="card">
+                        <img src="images/card-background.jpg" alt="card background" class="card-img">
+                        <img src="images/Steven-Moran.jpg" alt="profile images" class="profile-img">
+                        <h1>Santos Odigie</h1>
+                        <p class="job-title">Backend Developer</p>
+                        <p class="about">
+                            Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                            Earum alias dolorum facilis accusamus dolore eum ab aperiam adipisci ad expedita veniam
+                            nobis animi ea explicabo dolorem tenetur totam, atque, delectus consectetur repudiandae
+                            molestiae repellendus?
+                        </p>
+                        <a href="#" class="btn">contact</a>
+                        <ul class="social-media">
+                            <li><a href="#"><i class="fab fa-facebook-square"></i></a></li>
+                            <li><a href="#"><i class="fab fa-twitter-square"></i></a></li>
+                            <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                        </ul>
+                    </div>
+                    <div class="card">
+                        <img src="images/card-background.jpg" alt="card background" class="card-img">
+                        <img src="images/Sarah-Walraven.jpg" alt="profile images" class="profile-img">
+                        <h1>Amrita Giri</h1>
+                        <p class="job-title">Backend Developer</p>
+                        <p class="about">
+                            Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                            Earum alias dolorum facilis accusamus dolore eum ab aperiam adipisci ad expedita veniam
+                            nobis animi ea explicabo dolorem tenetur totam, atque, delectus consectetur repudiandae
+                            molestiae repellendus?
+                        </p>
+                        <a href="#" class="btn">contact</a>
+                        <ul class="social-media">
+                            <li><a href="#"><i class="fab fa-facebook-square"></i></a></li>
+                            <li><a href="#"><i class="fab fa-twitter-square"></i></a></li>
+                            <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                        </ul>
+                    </div>
+                    <div class="card">
+                        <img src="images/card-background.jpg" alt="card background" class="card-img">
+                        <img src="images/Kevin-Stansberry.jpg" alt="profile images" class="profile-img">
+                        <h1>Temi Owolabi</h1>
+                        <p class="job-title">Frontend Developer</p>
+                        <p class="about">
+                            Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                            Earum alias dolorum facilis accusamus dolore eum ab aperiam adipisci ad expedita veniam
+                            nobis animi ea explicabo dolorem tenetur totam, atque, delectus consectetur repudiandae
+                            molestiae repellendus?
+                        </p>
+                        <a href="#" class="btn">contact</a>
+                        <ul class="social-media">
+                            <li><a href="#"><i class="fab fa-facebook-square"></i></a></li>
+                            <li><a href="#"><i class="fab fa-twitter-square"></i></a></li>
+                            <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+    </body>
+
+</html>

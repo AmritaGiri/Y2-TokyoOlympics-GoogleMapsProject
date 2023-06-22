@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html> 
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+        <link href="css/style.css" rel="stylesheet" type="text/css"/>
+        <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+        <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+        <title>Home</title> 
+
+    </head> 
+
+    <body>
+
+
+        <section class="mainBanner">
+            <header>
+                <a href="index.html" class="logo">Logo</a>
+                <div class="toggle" onclick="toggleMenu();">
+                </div>
+            </header>
+            <div class="content">
+
+            </div>
+            <div class="play" onclick="videoToggle();">
+                <img src="images/play.png" alt=""/><span>Play Video</span>
+            </div>
+            <ul class="sci">
+                <li><a href="#"><img src="images/facebook.png" alt=""/></a></li>
+                <li><a href="#"><img src="images/twitter.png" alt=""/></a></li>
+                <li><a href="#"><img src="images/instagram.png" alt=""/></a></li>
+                <li><button onclick="myFunction()"><i class='bx bx-moon change-theme'></i></button></li>
+            </ul>
+            <div class="navigation">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="japan.html">About Japan</a></li>
+                    <li><a href="team.html">Team</a></li>
+                </ul>
+            </div>
+        </section>
+        <div class="trailer">
+            <video src="media/trailer.mp4" controls></video>
+            <img src="images/close.png" alt="" class="close" onclick="videoToggle();"/>
+        </div>
+        <script type="text/javascript">
+                    function toggleMenu(){
+                    const menuToggle = document.querySelector('.toggle');
+                            const navigation = document.querySelector('.navigation');
+                            menuToggle.classList.toggle('active');
+                            navigation.classList.toggle('active');
+                    }
+            function videoToggle(){
+            const trailer = document.querySelector('.trailer');
+                    trailer.classList.toggle('active');
+            }
+
+
+            document.body.style.backgroundColor = sessionStorage.getItem('bg');
+                    document.body.style.color = sessionStorage.getItem('cc');
+                    function myFunction() {
+                    if (sessionStorage.getItem('bg') === 'rgb(255, 255, 255)') {
+
+                    sessionStorage.setItem('bg', 'rgb(6, 23, 37)');
+                            sessionStorage.setItem('cc', '#777');
+                    }
+                    else if (sessionStorage.getItem('bg') == null || undefined) {
+                    sessionStorage.setItem('bg', 'rgb(6, 23, 37)');
+                            sessionStorage.setItem('cc', '#777');
+                    }
+                    else if (sessionStorage.getItem('bg') === 'rgb(6, 23, 37)') {
+
+                    sessionStorage.setItem('bg', 'rgb(255, 255, 255)');
+                            sessionStorage.setItem('cc', '#333');
+                    }
+
+                    document.body.style.backgroundColor = sessionStorage.getItem('bg');
+                            document.body.style.color = sessionStorage.getItem('cc');
+                    }
+        </script>
+
+
+        <section class="venues">
+            <div class="container">
+                <div class="venueListContainer">
+                    <div class="venueList">
+                        <ul class="VList">
+                            <li class="venueListItem">
+                                <a class="venueCard" id="stadium" href="stadium.html">
+                                    <figure class="venuePhoto">
+                                        <img src="images/stadium.jpg" alt="Tokyo Olympic Stadium" class="images">
+                                    </figure>
+                                    <div class="idk2">
+                                        <h3 class="venueListHeader">Olympic Stadium</h3>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="venueListItem">
+                                <a class="venueCard" id="metroGym" href="metroGym.html">
+                                    <figure class="venuePhoto">
+                                        <img src="images/metroGym.jpg" alt="Tokyo Metropolitan Gymnasium" class="images">
+                                    </figure>
+                                    <div class="idk2">
+                                        <h3 class="venueListHeader">Tokyo Metropolitan Gymnasium</h3>
+                                    </div>
+                                </a>
+                            </li>                        <li class="venueListItem">
+                                <a class="venueCard" id="stadium" href="yoyogi.html">
+                                    <figure class="venuePhoto">
+                                        <img src="images/yoyogi.jpg" alt="Yoyogi National Gymnasium" class="images">
+                                    </figure>
+                                    <div class="idk2">
+                                        <h3 class="venueListHeader">Yoyogi National Gymnasium</h3>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="venueListItem">
+                                <a class="venueCard" id="stadium" href="nippon.html">
+                                    <figure class="venuePhoto">
+                                        <img src="images/nippon.jpg" alt="Nippon Budokan" class="images">
+                                    </figure>
+                                    <div class="idk2">
+                                        <h3 class="venueListHeader">Nippon Budokan</h3>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="venueListItem">
+                                <a class="venueCard" id="stadium" href="forum.html">
+                                    <figure class="venuePhoto">
+                                        <img src="images/forum.jpg" alt="Tokyo International Forum" class="images">
+                                    </figure>
+                                    <div class="idk2">
+                                        <h3 class="venueListHeader">Tokyo International Forum</h3>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="venueListItem">
+                                <a class="venueCard" id="stadium" href="koku.html">
+                                    <figure class="venuePhoto">
+                                        <img src="images/koku.jpg" alt="Ryōgoku Kokugikan" class="images">
+                                    </figure>
+                                    <div class="idk2">
+                                        <h3 class="venueListHeader">Ryōgoku Kokugikan</h3>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="venueListItem">
+                                <a class="venueCard" id="stadium" href="park.html">
+                                    <figure class="venuePhoto">
+                                        <img src="images/park.jpg" alt="Equestrian Park" class="images">
+                                    </figure>
+                                    <div class="idk2">
+                                        <h3 class="venueListHeader">Equestrian Park</h3>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="venueListItem">
+                                <a class="venueCard" id="stadium" href="musa.html">
+                                    <figure class="venuePhoto">
+                                        <img src="images/musa.jpg" alt="Musashino Forest Sport Plaza" class="images">
+                                    </figure>
+                                    <div class="idk2">
+                                        <h3 class="venueListHeader">Musashino Forest Sport Plaza</h3>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="venueListItem">
+                                <a class="venueCard" id="stadium" href="ariake.html">
+                                    <figure class="venuePhoto">
+                                        <img src="images/ariake.jpg" alt="Ariake Arena" class="images">
+                                    </figure>
+                                    <div class="idk2">
+                                        <h3 class="venueListHeader">Ariake Arena</h3>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="venueListItem">
+                                <a class="venueCard" id="stadium" href="tennis.html">
+                                    <figure class="venuePhoto">
+                                        <img src="images/tennis.jpg" alt="Ariake Tennis Park" class="images">
+                                    </figure>
+                                    <div class="idk2">
+                                        <h3 class="venueListHeader">Ariake Tennis Park</h3>
+                                    </div>
+                                </a>
+                            </li>
+
+                        </ul>
+                    </div>
+                    <div class="mainDivImage">
+                        <img src="images/tokyo2020.jpg" alt="Tokyo Olympics 2020" id="banner2">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </body>
+</html>

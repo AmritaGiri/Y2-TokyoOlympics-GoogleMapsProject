@@ -1,0 +1,598 @@
+
+<!DOCTYPE html>
+<html> 
+    <head>
+        <meta charset=UTF-8>
+        <meta name=viewport content="width=device-width, initial-scale=1.0"> 
+        <title>Equestrian Park</title> 
+        <link href="css/style.css" rel="stylesheet" type="text/css"/>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/all.min.css" />
+        <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+    </head> 
+    <body>
+        <div class="space">
+
+        </div>
+        <header>
+            <a href="index.html" class="logo">Logo</a>
+            <div class="toggle" onclick="toggleMenu();">
+            </div>
+        </header>
+        <div class="content">
+
+        </div>
+
+
+        <div class="navigation">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="japan.html">About Japan</a></li>
+                <li><a href="#">Team</a></li>
+            </ul>
+
+            <ul class="sci">
+                <li><a href="#"><img src="images/facebook.png" alt=""/></a></li>
+                <li><a href="#"><img src="images/twitter.png" alt=""/></a></li>
+                <li><a href="#"><img src="images/instagram.png" alt=""/></a></li>
+                <li><button onclick="myFunction()"><i class='bx bx-moon change-theme'></i></button></li>
+            </ul>
+        </div>
+
+
+        <script type="text/javascript">
+                    function toggleMenu(){
+                    const menuToggle = document.querySelector('.toggle');
+                            const navigation = document.querySelector('.navigation');
+                            menuToggle.classList.toggle('active');
+                            navigation.classList.toggle('active');
+                    }
+            function videoToggle(){
+            const trailer = document.querySelector('.trailer');
+                    trailer.classList.toggle('active');
+            }
+
+
+            document.body.style.backgroundColor = sessionStorage.getItem('bg');
+                    document.body.style.color = sessionStorage.getItem('cc');
+                    document.body.style.navigation = sessionStorage.getItem('nv');
+                    function myFunction() {
+                    if (sessionStorage.getItem('bg') === 'rgb(255, 255, 255)') {
+
+                    sessionStorage.setItem('bg', 'rgb(6, 23, 37)');
+                            sessionStorage.setItem('cc', '#777');
+                            sessionStorage.setItem('nv', 'rgb(6, 23, 37)');
+                    }
+                    else if (sessionStorage.getItem('bg') == null || undefined) {
+                    sessionStorage.setItem('bg', 'rgb(6, 23, 37)');
+                            sessionStorage.setItem('cc', '#777');
+                            sessionStorage.setItem('nv', 'rgb(6, 23, 37)');
+                    }
+                    else if (sessionStorage.getItem('bg') === 'rgb(6, 23, 37)') {
+
+                    sessionStorage.setItem('bg', 'rgb(255, 255, 255)');
+                            sessionStorage.setItem('cc', '#333');
+                            sessionStorage.setItem('nv', 'rgb(6, 23, 37)');
+                    }
+
+                    document.body.style.backgroundColor = sessionStorage.getItem('bg');
+                            document.body.style.color = sessionStorage.getItem('cc');
+                            document.body.style.navigation = sessionStorage.getItem('nv');
+                    }
+        </script>
+
+
+
+        <section class="venues">
+            <div class="container">
+                <article class="venueArticle">
+                    <div class="articleHeader">
+                        <div class="articleContainer">
+                            <div class="articleContext">
+                                <span class="articleTagText">
+                                    Venues
+                                </span>
+                            </div>
+                            <h1 class="articleTitle">Equestrian Park</h1>
+                            <div class="line2"></div>
+                        </div>
+                    </div>
+                    <div class="toBeChanged">
+                        <figure class="leadBlockFigure">
+                            <img src="images/park.jpg" alt="Equestrian Park" class="bigImage">
+                            <figcaption class="leadBlockCaption">
+                                <div class="venueInfo">The new Olympic Stadium was officially opened in December 2019.</div>
+                            </figcaption>
+                        </figure>
+                        <div class="venueIntro">
+                            <div class="articleMarkdown">
+                                <p>
+                                    This 1964 Olympic legacy venue hosted the equestrian competitions at the Tokyo 1964 Games. 
+                                    The park currently serves as a main centre for the promotion of horse riding and equestrian competitions.
+                                </p>
+                                <p>
+                                    <strong>Venue Capacities</strong>
+                                    <br>
+                                    "
+                                    Olympic Equestrian (Dressage, Eventing, Jumping): 9,300 "
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+
+        <h3>Venue Map</h3>
+        <div class="line3"></div>
+
+
+        <div class="select-box">
+            <div class="options-container">
+
+                <div class="option">
+                    <input type="radio" class="radio" id="hotel" name="search" checked onclick=displayMap() />
+                    <label for="hotel">Hotels</label>
+                </div>
+
+                <div class="option">
+                    <input type="radio" class="radio" id="attraction" name="search" onclick=displayMap() />
+                    <label for="attraction">Attractions</label>
+                </div>
+
+                <div class="option">
+                    <input type="radio" class="radio" id="restaurant" name="search" onclick=displayMap() />
+                    <label for="restaurant">Restaurants</label>
+                </div>
+
+                <div class="option">
+                    <input type="radio" class="radio" id="shopping" name="search" onclick=displayMap() />
+                    <label for="shopping">Shopping</label> 
+                </div>
+
+
+            </div>
+            <!--        <div class="selected">
+                      Select Options
+                    </div>
+            -->
+        </div>
+
+        <script src="js/main.js"></script>
+        <br>
+
+        <div id=map></div>
+
+        <!-- Google Maps -->
+        <script src=https://maps.googleapis.com/maps/api/js?key=AIzaSyDW3FjShiG6gbY8Pkr6oh7O-bVvg3psZD4&libraries=places></script>
+
+        <script>
+                                document.write("<div id=loading_message>Loading...</div>")
+                                window.onload = () = >
+                        {
+                        // hide the webpage loading message
+                        document.getElementById("loading_message").style.visibility = "hidden"
+
+                                displayMap()
+                        }
+
+
+                        const displayMap = () = >
+                        {
+                        // These constants must start at 0
+                        // These constants must match the data layout in the 'locations' array below
+                        let CONTENT = 0,
+                                LATITUDE = 1,
+                                LONGITUDE = 2
+
+                                let locations = [
+                                        ["Equestrian Park", 35.6361971, 139.6364166]
+                                ]
+
+                                let map = new google.maps.Map(document.getElementById("map"), {
+                                zoom: 15.5,
+                                        center: new google.maps.LatLng(35.6361971, 139.6364166),
+                                        mapTypeId: google.maps.MapTypeId.ROADMAP,
+                                        styles: [
+                                        {
+                                        "featureType": "all",
+                                                "elementType": "labels",
+                                                "stylers": [
+                                                {
+                                                "lightness": 63
+                                                },
+                                                {
+                                                "hue": "#ff0000"
+                                                }
+                                                ]
+                                        },
+                                        {
+                                        "featureType": "administrative",
+                                                "elementType": "all",
+                                                "stylers": [
+                                                {
+                                                "hue": "#000bff"
+                                                },
+                                                {
+                                                "visibility": "on"
+                                                }
+                                                ]
+                                        },
+                                        {
+                                        "featureType": "administrative",
+                                                "elementType": "geometry",
+                                                "stylers": [
+                                                {
+                                                "visibility": "on"
+                                                }
+                                                ]
+                                        },
+                                        {
+                                        "featureType": "administrative",
+                                                "elementType": "labels",
+                                                "stylers": [
+                                                {
+                                                "color": "#4a4a4a"
+                                                },
+                                                {
+                                                "visibility": "on"
+                                                }
+                                                ]
+                                        },
+                                        {
+                                        "featureType": "administrative",
+                                                "elementType": "labels.text",
+                                                "stylers": [
+                                                {
+                                                "weight": "0.01"
+                                                },
+                                                {
+                                                "color": "#727272"
+                                                },
+                                                {
+                                                "visibility": "on"
+                                                }
+                                                ]
+                                        },
+                                        {
+                                        "featureType": "administrative.country",
+                                                "elementType": "labels",
+                                                "stylers": [
+                                                {
+                                                "color": "#ff0000"
+                                                }
+                                                ]
+                                        },
+                                        {
+                                        "featureType": "administrative.country",
+                                                "elementType": "labels.text",
+                                                "stylers": [
+                                                {
+                                                "color": "#ff0000"
+                                                }
+                                                ]
+                                        },
+                                        {
+                                        "featureType": "administrative.province",
+                                                "elementType": "geometry.fill",
+                                                "stylers": [
+                                                {
+                                                "visibility": "on"
+                                                }
+                                                ]
+                                        },
+                                        {
+                                        "featureType": "administrative.province",
+                                                "elementType": "labels.text",
+                                                "stylers": [
+                                                {
+                                                "color": "#545454"
+                                                }
+                                                ]
+                                        },
+                                        {
+                                        "featureType": "administrative.locality",
+                                                "elementType": "labels.text",
+                                                "stylers": [
+                                                {
+                                                "visibility": "on"
+                                                },
+                                                {
+                                                "color": "#737373"
+                                                }
+                                                ]
+                                        },
+                                        {
+                                        "featureType": "administrative.neighborhood",
+                                                "elementType": "labels.text",
+                                                "stylers": [
+                                                {
+                                                "color": "#7c7c7c"
+                                                },
+                                                {
+                                                "weight": "0.01"
+                                                }
+                                                ]
+                                        },
+                                        {
+                                        "featureType": "administrative.land_parcel",
+                                                "elementType": "labels.text",
+                                                "stylers": [
+                                                {
+                                                "color": "#404040"
+                                                }
+                                                ]
+                                        },
+                                        {
+                                        "featureType": "landscape",
+                                                "elementType": "all",
+                                                "stylers": [
+                                                {
+                                                "lightness": 16
+                                                },
+                                                {
+                                                "hue": "#ff001a"
+                                                },
+                                                {
+                                                "saturation": - 61
+                                                }
+                                                ]
+                                        },
+                                        {
+                                        "featureType": "poi",
+                                                "elementType": "labels.text",
+                                                "stylers": [
+                                                {
+                                                "color": "#828282"
+                                                },
+                                                {
+                                                "weight": "0.01"
+                                                }
+                                                ]
+                                        },
+                                        {
+                                        "featureType": "poi.government",
+                                                "elementType": "labels.text",
+                                                "stylers": [
+                                                {
+                                                "color": "#4c4c4c"
+                                                }
+                                                ]
+                                        },
+                                        {
+                                        "featureType": "poi.park",
+                                                "elementType": "all",
+                                                "stylers": [
+                                                {
+                                                "hue": "#00ff91"
+                                                }
+                                                ]
+                                        },
+                                        {
+                                        "featureType": "poi.park",
+                                                "elementType": "labels.text",
+                                                "stylers": [
+                                                {
+                                                "color": "#7b7b7b"
+                                                }
+                                                ]
+                                        },
+                                        {
+                                        "featureType": "road",
+                                                "elementType": "all",
+                                                "stylers": [
+                                                {
+                                                "visibility": "on"
+                                                }
+                                                ]
+                                        },
+                                        {
+                                        "featureType": "road",
+                                                "elementType": "labels",
+                                                "stylers": [
+                                                {
+                                                "visibility": "off"
+                                                }
+                                                ]
+                                        },
+                                        {
+                                        "featureType": "road",
+                                                "elementType": "labels.text",
+                                                "stylers": [
+                                                {
+                                                "color": "#999999"
+                                                },
+                                                {
+                                                "visibility": "on"
+                                                },
+                                                {
+                                                "weight": "0.01"
+                                                }
+                                                ]
+                                        },
+                                        {
+                                        "featureType": "road.highway",
+                                                "elementType": "all",
+                                                "stylers": [
+                                                {
+                                                "hue": "#ff0011"
+                                                },
+                                                {
+                                                "lightness": 53
+                                                }
+                                                ]
+                                        },
+                                        {
+                                        "featureType": "road.highway",
+                                                "elementType": "labels.text",
+                                                "stylers": [
+                                                {
+                                                "color": "#626262"
+                                                }
+                                                ]
+                                        },
+                                        {
+                                        "featureType": "transit",
+                                                "elementType": "labels.text",
+                                                "stylers": [
+                                                {
+                                                "color": "#676767"
+                                                },
+                                                {
+                                                "weight": "0.01"
+                                                }
+                                                ]
+                                        },
+                                        {
+                                        "featureType": "water",
+                                                "elementType": "all",
+                                                "stylers": [
+                                                {
+                                                "hue": "#0055ff"
+                                                }
+                                                ]
+                                        }
+                                        ]
+                                })
+
+                                let infoWindow = new google.maps.InfoWindow()
+
+                                locations.map(location = >
+                                {
+                                let marker = new google.maps.Marker({
+                                animation: google.maps.Animation.DROP,
+                                        position: new google.maps.LatLng(location[LATITUDE], location[LONGITUDE]),
+                                        map: map
+                                })
+
+                                        google.maps.event.addListener(marker, "click", () = >
+                                        {
+                                        infoWindow.setContent(location[CONTENT])
+                                                infoWindow.open(map, marker)
+
+                                                let services_centre_location = {lat: location[LATITUDE], lng: location[LONGITUDE]}
+
+                                        let service = new google.maps.places.PlacesService(map)
+
+                                                let serviceType = ""
+                                                if (document.getElementById("hotel").checked === true)
+                                        {
+                                        serviceType = "hotel"
+                                        }
+                                        if (document.getElementById("attraction").checked === true)
+                                        {
+                                        serviceType = "attraction"
+                                        }
+                                        if (document.getElementById("restaurant").checked === true)
+                                        {
+                                        serviceType = "restaurant"
+                                        }
+                                        if (document.getElementById("shopping").checked === true)
+                                        {
+                                        serviceType = "shopping"
+                                        }
+
+                                        service.nearbySearch({
+                                        location: services_centre_location,
+                                                radius: 500,
+                                                type: [serviceType]
+                                        }, getNearbyServicesMarkers)
+                                        })
+                                })
+
+                                let nearbyServicesMarkers = [] // used in both getNearbyServicesMarkers() and createMarker()
+                                const getNearbyServicesMarkers = (results, status) = >
+                        {
+                        if (status === google.maps.places.PlacesServiceStatus.OK)
+                        {
+                        // hide any previously displayed services markers
+                        if (nearbyServicesMarkers.length > 0)
+                        {
+                        nearbyServicesMarkers.map(nearbyServicesMarker = >
+                        {
+                        nearbyServicesMarker.setVisible(false)
+                        })
+                        }
+                        // empty nearbyServicesMarkers[], so that it can be used to hold the nearby services markers for the currently clicked marker
+                        nearbyServicesMarkers = [];
+                                results.map(result = >
+                                {
+                                createMarker(result);
+                                });
+                        }
+                        };
+//                const createMarker = place =>
+//                {
+//                    let marker = new google.maps.Marker({
+//                        map: map,
+//                        position: place.geometry.location
+//                    });
+//
+//                    // add the marker to nearbyServicesMarkers[]       
+//                    nearbyServicesMarkers.push(marker);
+//
+//                    google.maps.event.addListener(marker, "click", () =>
+//                    {
+//                        infoWindow.setContent(place.name);
+//                        infoWindow.open(map, this);
+//                    });
+//                };
+//            };
+//            
+
+                                const createMarker = place = >
+                        {
+                        let icon
+                                if (place.icon.indexOf("hotel") > 0)
+                        {
+                        icon = {
+                        url: "images/hotel_icon.png", // url
+                                scaledSize: new google.maps.Size(30, 30), // scaled size
+                        }
+                        } else if (place.icon.indexOf("attraction") > 0)
+                        {
+                        icon = {
+                        url: "images/attraction_icon.png", // url
+                                scaledSize: new google.maps.Size(30, 30), // scaled size
+                        }
+                        }
+                        else if (place.icon.indexOf("restaurant") > 0)
+                        {
+                        icon = {
+                        url: "images/restaurant_icon.png",
+                                scaledSize: new google.maps.Size(30, 30), // scaled size
+                        }
+                        } else if (place.icon.indexOf("shopping") > 0)
+                        {
+                        icon = {
+                        url: "images/shopping_icon.png", // url
+                                scaledSize: new google.maps.Size(30, 30), // scaled size
+                        }
+                        } else
+                        {
+                        icon = {
+                        url: place.icon,
+                                scaledSize: new google.maps.Size(30, 30), // scaled size
+                        }
+                        }
+
+                        let marker = new google.maps.Marker({
+                        map: map,
+                                position: place.geometry.location,
+                                icon: icon
+                        })
+
+                                // add the marker to nearbyServicesMarkers[]       
+                                nearbyServicesMarkers.push(marker)
+
+                                google.maps.event.addListener(marker, "click", () = >
+                                {
+                                infoWindow.setContent(place.name)
+                                        infoWindow.open(map, this)
+                                })
+                        }
+                        }
+        </script>
+
+    </body>
+</html>

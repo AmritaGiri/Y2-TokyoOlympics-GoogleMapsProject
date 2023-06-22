@@ -1,0 +1,489 @@
+
+<!DOCTYPE html>
+<html> 
+    <head>
+        <meta charset=UTF-8>
+        <meta name=viewport content="width=device-width, initial-scale=1.0"> 
+        <title>Ariake Tennis Park</title> 
+        <link href="css/style.css" rel="stylesheet" type="text/css"/>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/all.min.css" />
+        <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+    </head> 
+    <body>
+        <div class="space">
+
+        </div>
+        <header>
+            <a href="index.html" class="logo">Logo</a>
+            <div class="toggle" onclick="toggleMenu();">
+            </div>
+        </header>
+        <div class="content">
+
+        </div>
+
+
+        <div class="navigation">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="japan.html">About Japan</a></li>
+                <li><a href="#">Team</a></li>
+            </ul>
+
+            <ul class="sci">
+                <li><a href="#"><img src="images/facebook.png" alt=""/></a></li>
+                <li><a href="#"><img src="images/twitter.png" alt=""/></a></li>
+                <li><a href="#"><img src="images/instagram.png" alt=""/></a></li>
+                <li><button onclick="myFunction()"><i class='bx bx-moon change-theme'></i></button></li>
+            </ul>
+        </div>
+
+
+        <script type="text/javascript">
+                    function toggleMenu(){
+                    const menuToggle = document.querySelector('.toggle');
+                            const navigation = document.querySelector('.navigation');
+                            menuToggle.classList.toggle('active');
+                            navigation.classList.toggle('active');
+                    }
+            function videoToggle(){
+            const trailer = document.querySelector('.trailer');
+                    trailer.classList.toggle('active');
+            }
+
+
+            document.body.style.backgroundColor = sessionStorage.getItem('bg');
+                    document.body.style.color = sessionStorage.getItem('cc');
+                    document.body.style.navigation = sessionStorage.getItem('nv');
+                    function myFunction() {
+                    if (sessionStorage.getItem('bg') === 'rgb(255, 255, 255)') {
+
+                    sessionStorage.setItem('bg', 'rgb(6, 23, 37)');
+                            sessionStorage.setItem('cc', '#777');
+                            sessionStorage.setItem('nv', 'rgb(6, 23, 37)');
+                    }
+                    else if (sessionStorage.getItem('bg') == null || undefined) {
+                    sessionStorage.setItem('bg', 'rgb(6, 23, 37)');
+                            sessionStorage.setItem('cc', '#777');
+                            sessionStorage.setItem('nv', 'rgb(6, 23, 37)');
+                    }
+                    else if (sessionStorage.getItem('bg') === 'rgb(6, 23, 37)') {
+
+                    sessionStorage.setItem('bg', 'rgb(255, 255, 255)');
+                            sessionStorage.setItem('cc', '#333');
+                            sessionStorage.setItem('nv', 'rgb(6, 23, 37)');
+                    }
+
+                    document.body.style.backgroundColor = sessionStorage.getItem('bg');
+                            document.body.style.color = sessionStorage.getItem('cc');
+                            document.body.style.navigation = sessionStorage.getItem('nv');
+                    }
+        </script>
+
+
+        <section class="venues">
+            <div class="container">
+                <article class="venueArticle">
+                    <div class="articleHeader">
+                        <div class="articleContainer">
+                            <div class="articleContext">
+                                <span class="articleTagText">
+                                    Venues
+                                </span>
+                            </div>
+                            <h1 class="articleTitle">Ariake Tennis Park</h1>
+                            <div class="line2"></div>
+                        </div>
+                    </div>
+                    <div class="toBeChanged">
+                        <figure class="leadBlockFigure">
+                            <img src="images/tennis.jpg" alt="Ariake Tennis Park" class="bigImage">
+                            <figcaption class="leadBlockCaption">
+                                <div class="venueInfo">The Post Games-time Image as of Jan 2019</div>
+                            </figcaption>
+                        </figure>
+                        <div class="venueIntro">
+                            <div class="articleMarkdown">
+                                <p>
+                                    Ariake Tennis Park is one of the main tennis facilities in the country, featuring the Ariake Coliseum centre court and fully equipped with show courts, indoor courts and outdoor courts.
+                                </p>
+                                <p>
+                                    <strong>Venue Capacities</strong>
+                                    <br>
+                                    "
+                                    Olympic Tennis: 19,900 "
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+
+        <h3>Venue Map</h3>
+        <div class="line3"></div>
+
+
+        <br><br>
+
+
+
+        <script>
+
+
+
+            function initMap() {
+            var map = new google.maps.Map(document.getElementById('map'), {
+            center: {lat: 35.6352526, lng: 139.78808933218966},
+                    zoom: 13,
+                    styles: [
+                    {
+                    "featureType": "all",
+                            "elementType": "labels",
+                            "stylers": [
+                            {
+                            "lightness": 63
+                            },
+                            {
+                            "hue": "#ff0000"
+                            }
+                            ]
+                    },
+                    {
+                    "featureType": "administrative",
+                            "elementType": "all",
+                            "stylers": [
+                            {
+                            "hue": "#000bff"
+                            },
+                            {
+                            "visibility": "on"
+                            }
+                            ]
+                    },
+                    {
+                    "featureType": "administrative",
+                            "elementType": "geometry",
+                            "stylers": [
+                            {
+                            "visibility": "on"
+                            }
+                            ]
+                    },
+                    {
+                    "featureType": "administrative",
+                            "elementType": "labels",
+                            "stylers": [
+                            {
+                            "color": "#4a4a4a"
+                            },
+                            {
+                            "visibility": "on"
+                            }
+                            ]
+                    },
+                    {
+                    "featureType": "administrative",
+                            "elementType": "labels.text",
+                            "stylers": [
+                            {
+                            "weight": "0.01"
+                            },
+                            {
+                            "color": "#727272"
+                            },
+                            {
+                            "visibility": "on"
+                            }
+                            ]
+                    },
+                    {
+                    "featureType": "administrative.country",
+                            "elementType": "labels",
+                            "stylers": [
+                            {
+                            "color": "#ff0000"
+                            }
+                            ]
+                    },
+                    {
+                    "featureType": "administrative.country",
+                            "elementType": "labels.text",
+                            "stylers": [
+                            {
+                            "color": "#ff0000"
+                            }
+                            ]
+                    },
+                    {
+                    "featureType": "administrative.province",
+                            "elementType": "geometry.fill",
+                            "stylers": [
+                            {
+                            "visibility": "on"
+                            }
+                            ]
+                    },
+                    {
+                    "featureType": "administrative.province",
+                            "elementType": "labels.text",
+                            "stylers": [
+                            {
+                            "color": "#545454"
+                            }
+                            ]
+                    },
+                    {
+                    "featureType": "administrative.locality",
+                            "elementType": "labels.text",
+                            "stylers": [
+                            {
+                            "visibility": "on"
+                            },
+                            {
+                            "color": "#737373"
+                            }
+                            ]
+                    },
+                    {
+                    "featureType": "administrative.neighborhood",
+                            "elementType": "labels.text",
+                            "stylers": [
+                            {
+                            "color": "#7c7c7c"
+                            },
+                            {
+                            "weight": "0.01"
+                            }
+                            ]
+                    },
+                    {
+                    "featureType": "administrative.land_parcel",
+                            "elementType": "labels.text",
+                            "stylers": [
+                            {
+                            "color": "#404040"
+                            }
+                            ]
+                    },
+                    {
+                    "featureType": "landscape",
+                            "elementType": "all",
+                            "stylers": [
+                            {
+                            "lightness": 16
+                            },
+                            {
+                            "hue": "#ff001a"
+                            },
+                            {
+                            "saturation": - 61
+                            }
+                            ]
+                    },
+                    {
+                    "featureType": "poi",
+                            "elementType": "labels.text",
+                            "stylers": [
+                            {
+                            "color": "#828282"
+                            },
+                            {
+                            "weight": "0.01"
+                            }
+                            ]
+                    },
+                    {
+                    "featureType": "poi.government",
+                            "elementType": "labels.text",
+                            "stylers": [
+                            {
+                            "color": "#4c4c4c"
+                            }
+                            ]
+                    },
+                    {
+                    "featureType": "poi.park",
+                            "elementType": "all",
+                            "stylers": [
+                            {
+                            "hue": "#00ff91"
+                            }
+                            ]
+                    },
+                    {
+                    "featureType": "poi.park",
+                            "elementType": "labels.text",
+                            "stylers": [
+                            {
+                            "color": "#7b7b7b"
+                            }
+                            ]
+                    },
+                    {
+                    "featureType": "road",
+                            "elementType": "all",
+                            "stylers": [
+                            {
+                            "visibility": "on"
+                            }
+                            ]
+                    },
+                    {
+                    "featureType": "road",
+                            "elementType": "labels",
+                            "stylers": [
+                            {
+                            "visibility": "off"
+                            }
+                            ]
+                    },
+                    {
+                    "featureType": "road",
+                            "elementType": "labels.text",
+                            "stylers": [
+                            {
+                            "color": "#999999"
+                            },
+                            {
+                            "visibility": "on"
+                            },
+                            {
+                            "weight": "0.01"
+                            }
+                            ]
+                    },
+                    {
+                    "featureType": "road.highway",
+                            "elementType": "all",
+                            "stylers": [
+                            {
+                            "hue": "#ff0011"
+                            },
+                            {
+                            "lightness": 53
+                            }
+                            ]
+                    },
+                    {
+                    "featureType": "road.highway",
+                            "elementType": "labels.text",
+                            "stylers": [
+                            {
+                            "color": "#626262"
+                            }
+                            ]
+                    },
+                    {
+                    "featureType": "transit",
+                            "elementType": "labels.text",
+                            "stylers": [
+                            {
+                            "color": "#676767"
+                            },
+                            {
+                            "weight": "0.01"
+                            }
+                            ]
+                    },
+                    {
+                    "featureType": "water",
+                            "elementType": "all",
+                            "stylers": [
+                            {
+                            "hue": "#0055ff"
+                            }
+                            ]
+                    }
+                    ]
+            });
+                    var input = document.getElementById('searchInput');
+                    map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
+                    const options = {
+                    componentRestrictions: { country: "jpn" }
+                    };
+                    var autocomplete = new google.maps.places.Autocomplete(input, options);
+                    autocomplete.bindTo('bounds', map);
+                    var infowindow = new google.maps.InfoWindow();
+                    var marker = new google.maps.Marker({
+                    map: map,
+                            anchorPoint: new google.maps.Point(0, - 29)
+                    });
+                    autocomplete.addListener('place_changed', function() {
+                    infowindow.close();
+                            marker.setVisible(false);
+                            var place = autocomplete.getPlace();
+                            if (!place.geometry) {
+                    window.alert("Autocomplete's returned place contains no geometry");
+                            return;
+                    }
+
+                    // If the place has a geometry, then present it on a map.
+                    if (place.geometry.viewport) {
+                    map.fitBounds(place.geometry.viewport);
+                    } else {
+                    map.setCenter(place.geometry.location);
+                            map.setZoom(17);
+                    }
+                    marker.setIcon(({
+                    url: place.icon,
+                            size: new google.maps.Size(71, 71),
+                            origin: new google.maps.Point(0, 0),
+                            anchor: new google.maps.Point(17, 34),
+                            scaledSize: new google.maps.Size(35, 35)
+                    }));
+                            marker.setPosition(place.geometry.location);
+                            marker.setVisible(true);
+                            var address = '';
+                            if (place.address_components) {
+                    address = [
+                            (place.address_components[0] && place.address_components[0].short_name || ''),
+                            (place.address_components[1] && place.address_components[1].short_name || ''),
+                            (place.address_components[2] && place.address_components[2].short_name || '')
+                    ].join(' ');
+                    }
+
+                    infowindow.setContent('<div><strong>' + place.name + '</strong><br>' + address);
+                            infowindow.open(map, marker);
+                            // Location details
+                            for (var i = 0; i < place.address_components.length; i++) {
+                    if (place.address_components[i].types[0] == 'postal_code'){
+                    document.getElementById('postal_code').innerHTML = place.address_components[i].long_name;
+                    }
+                    if (place.address_components[i].types[0] == 'country'){
+                    document.getElementById('country').innerHTML = place.address_components[i].long_name;
+                    }
+                    }
+                    document.getElementById('location').innerHTML = place.formatted_address;
+                            document.getElementById('lat').innerHTML = place.geometry.location.lat();
+                            document.getElementById('lon').innerHTML = place.geometry.location.lng();
+                    });
+            }
+
+
+        </script>
+
+
+
+        <!-- Search input 
+  <input id="searchInput" class="controls" type="text" placeholder="Enter a location">
+        -->
+
+        <div class="search-wrapper">
+            <div class="input-holder">
+                <input type="text" id="searchInput" class="controls" placeholder="Enter a location" />
+                <button class="search-icon" onclick="searchToggle(this, event);"><span></span></button>
+            </div>
+
+        </div>
+
+
+        <!-- Google map -->
+        <div id="map"></div>
+
+
+        <script src="https://maps.googleapis.com/maps/api/js?libraries=places&key=AIzaSyDW3FjShiG6gbY8Pkr6oh7O-bVvg3psZD4&callback=initMap" async defer></script>
+        <script src="https://maps.googleapis.com/maps/api/js?libraries=places&key=AIzaSyDW3FjShiG6gbY8Pkr6oh7O-bVvg3psZD4"></script>
+    </body>
+</html>
